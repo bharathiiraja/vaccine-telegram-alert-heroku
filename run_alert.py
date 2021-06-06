@@ -3,7 +3,7 @@ import os
 from datetime import date, datetime
 import time
 import requests
-import logging
+#import logging
 
 #logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d : %(message)s',level=logging.INFO, filename='logs/cowin.log', filemode='w')
 
