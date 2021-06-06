@@ -5,8 +5,7 @@ import time
 import requests
 import logging
 
-logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d : %(message)s',
-                    level=logging.INFO, filename='logs/cowin.log', filemode='w')
+#logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d : %(message)s',level=logging.INFO, filename='logs/cowin.log', filemode='w')
 
 currentDate = date.today().strftime("%d-%m-%Y")
 
@@ -74,7 +73,7 @@ def send_telegram_msg(message, chatId):
         print("Sent Messages to Telegram !")
     else:
         print("Invalid Telegram Chat Id: " + str(chatId))
-        logging.error("Invalid Telegram Chat Id: " + str(chatId) + "~Response Code:" + str(response))
+        #logging.error("Invalid Telegram Chat Id: " + str(chatId) + "~Response Code:" + str(response))
 
 
 def run_all_districts():
