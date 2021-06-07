@@ -1,1 +1,1 @@
-worker: python run_alert.py
+worker: python run_alert_heroku.py
