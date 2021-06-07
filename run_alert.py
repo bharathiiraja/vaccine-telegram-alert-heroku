@@ -3,9 +3,9 @@ import os
 from datetime import date, datetime
 import time
 import requests
-#import logging
+import logging
 
-#logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d : %(message)s',level=logging.INFO, filename='logs/cowin.log', filemode='w')
+logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d : %(message)s',level=logging.INFO, filename='logs/cowin.log', filemode='w')
 
 currentDate = date.today().strftime("%d-%m-%Y")
 
@@ -49,7 +49,7 @@ def slot_availability(districtId, chatId):
                 for msg in slotAvailableList18:
                     try:
                         prevDict[districtId] = currDict.get(districtId)[:]
-                        send_telegram_msg(msg, chatId)
+                        #send_telegram_msg(msg, chatId)
                     except requests.exceptions.RequestException as e:
                         print("Connection refused by the telegram server..Let me sleep for 5 seconds")
                         time.sleep(5)
