@@ -3,9 +3,6 @@ import os
 from datetime import date, datetime
 import time
 import requests
-import logging
-
-logging.basicConfig(format='%(asctime)s :: %(levelname)s :: %(funcName)s :: %(lineno)d : %(message)s',level=logging.INFO, filename='logs/cowin.log', filemode='w')
 
 currentDate = date.today().strftime("%d-%m-%Y")
 
@@ -49,7 +46,7 @@ def slot_availability(districtId, chatId):
                 for msg in slotAvailableList18:
                     try:
                         prevDict[districtId] = currDict.get(districtId)[:]
-                        #send_telegram_msg(msg, chatId)
+                        send_telegram_msg(msg, chatId)
                     except requests.exceptions.RequestException as e:
                         print("Connection refused by the telegram server..Let me sleep for 5 seconds")
                         time.sleep(5)
@@ -72,8 +69,7 @@ def send_telegram_msg(message, chatId):
     if response.status_code == 200:
         print("Sent Messages to Telegram !")
     else:
-        print("Invalid Telegram Chat Id: " + str(chatId))
-        #logging.error("Invalid Telegram Chat Id: " + str(chatId) + "~Response Code:" + str(response))
+        print("Invalid Telegram Chat Id: " + str(chatId) + "~Response Code:" + str(response))
 
 
 def run_all_districts():
