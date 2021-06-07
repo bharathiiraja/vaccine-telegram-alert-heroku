@@ -2,8 +2,11 @@ import collections
 import os
 from datetime import date, datetime
 import time
+import pytz
 import requests
 
+# get the specified location
+IST = pytz.timezone('Asia/Kolkata')
 currentDate = date.today().strftime("%d-%m-%Y")
 
 currentList = []
@@ -11,7 +14,7 @@ currDict = {}
 prevDict = {}
 
 def slot_availability(districtId, chatId):
-    dateTime = datetime.now()
+    dateTime = datetime.now(IST)
     print('Searching for Slot Availability....' + str(districtId) + ' ---> Time: ' + str(
         dateTime.strftime("%d/%m/%Y %H:%M:%S")))
     COWIN_REQUEST_URL = os.environ.get('COWIN_BASE_URL') + '/appointment/sessions/public/calendarByDistrict?district_id=' + str(
