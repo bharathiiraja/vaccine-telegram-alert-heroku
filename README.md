@@ -10,15 +10,15 @@ Heroku Setup !!!
 
 Prerequisite for Heroku !!
 ------------------------
-* Before you can deploy an app to Heroku, you need to add Two Important Files which are the Procfile & requirements.txt file
+* Before you can deploy an app to Heroku, you need to add two important files which are the Procfile & requirements.txt file
 * Procfile Setup
 
-     ``` worker: python YOURSCRIPTNAME.py ```
+      worker: python YOURSCRIPTNAME.py
 * Requirements.txt File Setup
 
 
-      1. Create a file (Requirements.txt) inside repo and mention required libraries
-      2. The requirements.txt file makes it easier for Heroku to install the correct versions of the required Python libraries (or “packages”) to run your Python code.
+      Create a file (Requirements.txt) inside repo and mention required libraries
+  The requirements.txt file makes it easier for Heroku to install the correct versions of the required Python libraries (or “packages”) to run your Python code.
 
 Deploying to Heroku !
 --------------------
@@ -32,8 +32,13 @@ git push heroku main
 
 Running the App or bot on Heroku!
 ---------------------------------
+
 ```heroku ps:scale worker=1```
 
+Stop the App on Heroku!
+---------------------------------
+
+```heroku ps:scale worker=0```
 
 Tech Stack !!
 -----------
